@@ -9,7 +9,7 @@ namespace Misskey.Services;
 public class JsonService {
 
 	/// <summary>
-	/// 
+	///
 	/// </summary>
 	/// <typeparam name="_T"></typeparam>
 	/// <param name="that"></param>
@@ -36,7 +36,7 @@ public class JsonService {
 	}
 
 	/// <summary>
-	/// 
+	///
 	/// </summary>
 	/// <returns></returns>
 	public JsonSerializerOptions GetDefaultJsonSerializerOptions() => new JsonSerializerOptions {
