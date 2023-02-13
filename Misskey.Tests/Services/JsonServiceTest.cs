@@ -33,7 +33,7 @@ public class JsonServiceTest {
 		if ( rootOrNull is not JsonNode root ) {
 			Assert.Fail( "`rootOrNull` が `null` だよ" );
 
-			/* Assert.Fail() を呼ぶと、ここへは来ないはずだが、`return` を書いとかないと怒られるなので書いてる。 */
+			/* Assert.Fail() を呼ぶと、ここへは来ないはずだが、`return` を書いとかないと怒られるので書いてる。 */
 			return;
 		}
 
