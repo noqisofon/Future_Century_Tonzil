@@ -28,4 +28,7 @@ public class MisskeyTest {
 			Assert.That( misskey_instance.Host, Is.EqualTo( hostname ) );
 		}
 	}
+
+	// TODO: あとトークン
+	// TODO: URL がうにゃうにゃできること[何が？]
 }
