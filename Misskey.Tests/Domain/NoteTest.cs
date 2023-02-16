@@ -3,18 +3,25 @@ using System.Text.Json.Serialization;
 
 using Misskey.Domain;
 
+using NUnit.Framework.Internal;
+
 namespace Misskey.Tests.Domain;
 
 public class NoteTest {
 
+	#region Private Fields
+
+	private Randomizer randomizer__;
+
+	#endregion Private Fields
 
 	#region Public Methods
 
 	[Test]
 	public void Idのみに値を設定してシリアライズしたときにidだけがシリアライズされること() {
+		var id = randomizer__.GetString( 6, "0123456789" );
 		var note = new Note {
-			/* 114514 とはメタ構文リテラル値の一種です。 */
-			Id = "114514"
+			Id = id
 		};
 
 		var options = new JsonSerializerOptions {
@@ -33,19 +40,20 @@ public class NoteTest {
 	}
 
 	[Test]
-	public void NoteVisibilityってシリアライズされるとどうなるの() {
+	public void NoteVisibilityってシリアライズされるとどうなるの([Values] NoteVisibility visibility) {
 		var note = new Note {
 			Id = "114514",
 			CreatedAt = new DateTime( 2003, 11, 4 ),
 			Text = "レターパックで現金送れ",
 			Cw = "は全て詐欺",
 			UserId = "1145141919",
-			Visibility = NoteVisibility.Home
+			Visibility = visibility
 		};
 
 		var options = new JsonSerializerOptions {
-			// プロパティは型の既定値と等しい場合にのみ無視されるよ。
-			DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault,
+			/* NoteVisibility の JSON シリアライズ後をテストしたいので一旦コメントアウトする。 */
+			// // プロパティは型の既定値と等しい場合にのみ無視されるよ。
+			// DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault,
 			Converters = {
 				// 列挙体な値を全部小文字な文字列にするよ
 				new JsonStringEnumConverter( JsonNamingPolicy.CamelCase )
@@ -53,8 +61,11 @@ public class NoteTest {
 		};
 
 		var jsonedNote = JsonSerializer.Serialize( note, options );
+		{
+			var visibilityStringify = visibility.ToString().ToLower();
 
-		Assert.That( jsonedNote, Does.Contain( "\"visibility\":\"home\"" ), "`Vibility' の値が 1 ではなく `home' であること" );
+			Assert.That( jsonedNote, Does.Contain( $"\"visibility\":\"{visibilityStringify}\"" ), $"`Vibility' の値が {(int)visibility} ではなく `{visibilityStringify}' であること" );
+		}
 
 		var deserializedNote = JsonSerializer.Deserialize( jsonedNote, typeof( Note ) ) as Note;
 
@@ -65,6 +76,11 @@ public class NoteTest {
 		Assert.That( deserializedNote.Cw, Is.EqualTo( note.Cw ), "当然 `Cw' が一緒なこと" );
 		Assert.That( deserializedNote.UserId, Is.EqualTo( note.UserId ), "当然 `UserId' が一緒なこと" );
 		Assert.That( deserializedNote.Visibility, Is.EqualTo( note.Visibility ), "当然 `Visibility' が一緒なこと" );
+	}
+
+	[OneTimeSetUp]
+	public void Setup() {
+		randomizer__ = new Randomizer( 114514 );
 	}
 
 	[Test]
