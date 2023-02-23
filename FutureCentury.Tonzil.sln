@@ -8,11 +8,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{F56638A0-489
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Misskey", "Misskey", "{98C67350-92DA-41BD-9B98-0ABB84DEBA75}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Misskey", "Misskey\Misskey.csproj", "{1EDB157C-F211-4E52-985C-EE08CC37EF63}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Misskey", "Misskey\Misskey.csproj", "{1EDB157C-F211-4E52-985C-EE08CC37EF63}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{6B29DECD-11BB-4E6F-A6C7-BE01E1F41F04}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Misskey.Tests", "Misskey.Tests\Misskey.Tests.csproj", "{4259581B-56DE-4F40-9F18-95A5ECCE0DB5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Misskey.Tests", "Misskey.Tests\Misskey.Tests.csproj", "{4259581B-56DE-4F40-9F18-95A5ECCE0DB5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
