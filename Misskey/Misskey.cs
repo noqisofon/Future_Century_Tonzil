@@ -52,8 +52,8 @@ public sealed class Misskey {
 	/// </summary>
 	/// <param name="endPoint">エンドポイント</param>
 	/// <returns></returns>
-	public Uri GetApiUrl(string endPoint) => new UriBuilder( "https", this.Host ) {
-		Path = $"/api/${endPoint}"
+	public Uri GetApiUrl(string? endPoint) => new UriBuilder( "https", this.Host ) {
+		Path = $"/api/{endPoint}"
 	}.Uri;
 
 	#endregion Public Methods
