@@ -50,6 +50,10 @@
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="BlazorStrap" Version="5.1.100" />
+    </ItemGroup>
+
+    <ItemGroup>
       <ProjectReference Include="..\Misskey\Misskey.csproj" />
     </ItemGroup>
 
