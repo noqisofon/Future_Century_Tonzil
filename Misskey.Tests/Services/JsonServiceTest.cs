@@ -8,6 +8,8 @@ namespace Misskey.Tests.Services;
 
 public class JsonServiceTest {
 
+	#region Public Methods
+
 	[Test]
 	public void シリアライズしたりデシリアライズできること() {
 		var note = new Note {
@@ -70,5 +72,11 @@ public class JsonServiceTest {
 		} );
 	}
 
+	#endregion Public Methods
+
+	#region Private Fields
+
 	private readonly JsonService service = new();
+
+	#endregion Private Fields
 }

@@ -3,17 +3,9 @@ using System.Text.Json.Serialization;
 
 using Misskey.Domain;
 
-using NUnit.Framework.Internal;
-
 namespace Misskey.Tests.Domain;
 
 public class NoteTest {
-
-	#region Private Fields
-
-	private Randomizer randomizer__;
-
-	#endregion Private Fields
 
 	#region Public Methods
 
@@ -113,4 +105,10 @@ public class NoteTest {
 	}
 
 	#endregion Public Methods
+
+	#region Private Fields
+
+	private Randomizer randomizer__;
+
+	#endregion Private Fields
 }

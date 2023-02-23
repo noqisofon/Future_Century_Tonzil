@@ -1,6 +1,9 @@
 ﻿namespace Misskey.Tests;
 
 public class MisskeyTest {
+	/* この Public Methods のような #region .. #endregion は CodeMaid で付けてるものなので、必須ではないです。 */
+
+	#region Public Methods
 
 	/// <summary>
 	///
@@ -25,6 +28,8 @@ public class MisskeyTest {
 
 		Assert.That( misskey_instance.Host, Is.EqualTo( hostname ) );
 	}
+
+	#endregion Public Methods
 
 	// TODO: あとトークン
 	// TODO: URL がうにゃうにゃできること[何が？]
