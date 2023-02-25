@@ -1,6 +1,9 @@
 ﻿@page "/"
 
-<BSButton Color="BSColor.Primary" Target="note-modal">ノート</BSButton>
+<!-- ボタンを押すと、モーダルが開くやつ  -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#note-dialog">
+  ノート
+</button>
 
 <NoteDialog />
 

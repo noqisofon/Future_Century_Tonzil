@@ -1,27 +1,30 @@
 ﻿@using Misskey.Domain
+@inject IJSRuntime JS
 
-<BSToaster />
-@inject IBlazorStrap blazorStrap
-
-<BSModal DataId="note-modal" OnShow="@(() => AssignNote( new Note() ))" HideOnValidSubmit="true" IsStaticBackdrop="true">
-  <BSForm Model="model" OnValidSubmit="@Update">
-    <DataAnnotationsValidator />
-    <BSModalHeader>あなたのお気持ちを聞かせてください</BSModalHeader>
-    <BSModalContent>
-      <BSInput InputType="InputType.TextArea" @bind-value="model.Text"></BSInput>
-    </BSModalContent>
-    <BSModalFooter Context="modal">
-      <BSButton MarginStart="Margins.Auto" Color="BSColor.Secondary" Target="note-modal">やめとく</BSButton>
-      <BSButton Color="BSColor.Primary" IsSubmit="true">投稿</BSButton>
-    </BSModalFooter>
-  </BSForm>
-</BSModal>
+<div id="note-dialog" class="modal fade" tabindex="-1" aria-labelledby="tell-me-how-you-feel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 id="tell-me-how-you-feel" class="modal-title">あなたのお気持ちを聞かせてください</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>  <!-- .modal-header -->
+      <div class="modal-body">
+        <textarea @bind="model.Text">
+        </textarea>
+      </div>  <!-- .modal-body -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">やめとく</button>
+        <button type="button" class="btn btn-primary"@onclick="Update">投稿</button>
+      </div>  <!-- .modal-footer -->
+    </div>  <!-- .modal-content -->
+  </div>  <!-- .modal-dialog -->
+</div>  <!-- .modal.fade -->
 
 @code {
     /// <summary>
     /// 現在のビューの影、いわゆるモデル
     /// </summary>
-    private Note model = new ();
+    private Note model = new();
 
     /// <summary>
     /// 新しいモデルを設定します。
@@ -37,6 +40,9 @@
     /// </summary>
     /// <returns></returns>
     private async Task Update() {
-        await Task.Run( () => blazorStrap.Toaster.Add( "Fake note added!", options => options.CloseAfter = 5000 ) );
+        // TODO: ノートを投稿する。
+        await Task.Run( () => {} );
+        // TODO: で、モーダルを閉じる。
+        await JS.InvokeVoidAsync( "closeModal", "note-dialog" );
     }
 }
