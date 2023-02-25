@@ -1,6 +1,8 @@
+# 未来世紀とんじる
 
 
 
-= LICENSE
+
+# LICENSE
 
 see ./LICENSE
