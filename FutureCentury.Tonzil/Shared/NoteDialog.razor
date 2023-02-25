@@ -9,7 +9,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>  <!-- .modal-header -->
             <div class="modal-body">
-                <textarea @bind="model.Text">
+                <textarea class="form-control" cols="32" rows="3" @bind="model.Text">
         </textarea>
             </div>  <!-- .modal-body -->
             <div class="modal-footer">
@@ -70,7 +70,11 @@
     private async Task Update() {
         // TODO: ノートを投稿する。
         await Task.Run( () => { } );
-        // TODO: で、モーダルを閉じる。
+        // モーダルを閉じる。
         await CloseModal( "note-dialog" );
+        /* NOTE: モーダルを閉じる際、閉じる前に返ってくる模様。 */
+        // 送信に成功した場合、新しいノートオブジェクトを設定する。
+        await AssignNote( new Note() );
+        /* NOTE: 今のところ、まだみすきーインスタンスにノートを放流しないため、確定で新しいノートを設定する。 */
     }
 }
