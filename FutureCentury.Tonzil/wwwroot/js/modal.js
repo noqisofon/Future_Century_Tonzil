@@ -1,5 +1,6 @@
 export function closeModal(modalId) {
-    const noteDialog = document.getElementById(modalId);
+    const noteDialogElement = document.getElementById(modalId);
+    const noteDialog = bootstrap.Modal.getInstance(noteDialogElement);
 
     noteDialog.hide();
-};
+}
