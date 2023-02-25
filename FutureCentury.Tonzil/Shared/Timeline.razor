@@ -1,0 +1,26 @@
+﻿@using Misskey.Domain
+@using FutureCentury.Tonzil.Data
+@inject NotesService NotesService
+
+@if ( notes == null ) {
+    <p>Loading ...</p>
+} else {
+    @foreach ( var note in notes ) {
+        <NoteCard Note="@note" />
+    }
+}
+
+@code {
+    /// <summary>
+    /// タイムラインで表示するノートのシーケンス。
+    /// </summary>
+    private IEnumerable<Note> notes;
+
+    /// <summary>
+    ///初期化した後に実行されます。
+    /// </summary>
+    /// <returns></returns>
+    protected override async Task OnInitializedAsync() {
+        notes = await NotesService.GetNotesAsync();
+    }
+}

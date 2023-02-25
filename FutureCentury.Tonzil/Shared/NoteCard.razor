@@ -1,0 +1,30 @@
+﻿@using Misskey.Domain
+
+<div class="card">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img src="..." alt="" />
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="card-body">
+            <!-- .card-title にはユーザー名(あとスクリーン名)を表示する  -->
+            <p class="card-title"></p>
+            <!-- 真ん中は .Text -->
+            <p class="card-text">@Note.Text</p>
+            <!-- こっちは投稿した時間？ -->
+            <p class="card-text">
+                <small class="text-muted">@Note.CreatedAt</small>
+            </p>
+        </div>
+    </div>
+</div>
+
+@code {
+
+    /// <summary>
+    /// 表示するノート
+    /// </summary>
+    [Parameter]
+    public Note Note { get; set; }
+}
