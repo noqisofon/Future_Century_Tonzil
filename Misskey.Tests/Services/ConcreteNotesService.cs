@@ -1,4 +1,5 @@
 ﻿using Misskey.Domain;
+using Misskey.Requests;
 using Misskey.Services;
 
 namespace Misskey.Tests.Services;
@@ -9,11 +10,11 @@ namespace Misskey.Tests.Services;
 public class ConcreteNotesService : INotesService {
 
     /// <summary>
-    ///
+    /// ノート一覧を取得します。
     /// </summary>
+    /// <param name="request"></param>
     /// <returns></returns>
-    /// <exception cref="NotImplementedException"></exception>
-    public async Task<IEnumerable<Note>> GetNotesAsync() {
+    public async Task<IEnumerable<Note>> GetNotesAsync(NotesRequest? request = null) {
         return await Task.Run( () => new Note[] {
                 new Note {
                     Id = Guid.NewGuid().ToString("N"),

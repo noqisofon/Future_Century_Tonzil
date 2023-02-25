@@ -14,6 +14,7 @@ public class NotesServiceTest {
         var notes = await service.GetNotesAsync();
 
         Assert.That( notes, Is.Not.Null );
+        Assert.That( notes, Has.Exactly( 1 ).Items );
     }
 
     private INotesService service;

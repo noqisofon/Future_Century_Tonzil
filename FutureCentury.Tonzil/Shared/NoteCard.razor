@@ -11,10 +11,10 @@
             <!-- .card-title にはユーザー名(あとスクリーン名)を表示する  -->
             <p class="card-title"></p>
             <!-- 真ん中は .Text -->
-            <p class="card-text">@Note.Text</p>
+            <p class="card-text">@Note?.Text</p>
             <!-- こっちは投稿した時間？ -->
             <p class="card-text">
-                <small class="text-muted">@Note.CreatedAt</small>
+                <small class="text-muted">@Note?.CreatedAt</small>
             </p>
         </div>
     </div>
@@ -26,5 +26,5 @@
     /// 表示するノート
     /// </summary>
     [Parameter]
-    public Note Note { get; set; }
+    public Note? Note { get; set; }
 }

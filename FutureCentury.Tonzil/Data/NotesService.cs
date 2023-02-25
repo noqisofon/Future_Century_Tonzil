@@ -1,4 +1,5 @@
 ﻿using Misskey.Domain;
+using Misskey.Requests;
 using Misskey.Services;
 
 namespace FutureCentury.Tonzil.Data;
@@ -18,7 +19,7 @@ public class NotesService : INotesService {
     ///
     /// </summary>
     /// <returns></returns>
-    public async Task<IEnumerable<Note>> GetNotesAsync() {
+    public async Task<IEnumerable<Note>> GetNotesAsync(NotesRequest? request = null) {
         return await Task.Run( () => new Note[] {
                 new Note {
                     CreatedAt = DateTime.Now,
