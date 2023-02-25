@@ -1,18 +1,10 @@
-﻿<div class="modal" tabindex="-1">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">あなたのお気持ちを聞かせてください</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>  <!-- .modal-header -->
-      <div class="modal-body">
-        <textarea>
-        </textarea>
-      </div>  <!-- .modal-body -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dissmiss="modal">やめとく</button>
-        <button type="button" class="btn btn-primary">投稿</button>
-      </div>  <!-- .modal-footer -->
-    </div>  <!-- .modal-content -->
-  </div>  <!-- .modal-dialog -->
-</div>  <!-- .modal -->
+﻿<BSModal DataId="note-modal">
+  <Header>あなたのお気持ちを聞かせてください</Header>
+  <Content>
+    <BSInput InputType="InputType.TextArea" Value="@("")"></BSInput>
+  </Content>
+  <Footer>
+    <BSButton Color="BSColor.Secondary">やめとく</BSButton>
+    <BSButton Color="BSColor.Primary">投稿</BSButton>
+  </Footer>
+</BSModal>

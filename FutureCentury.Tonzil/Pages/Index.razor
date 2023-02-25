@@ -1,9 +1,6 @@
 ﻿@page "/"
 
-<button class="btn btn-primary" @onclick="Note">ノート</button>
+<BSButton Color="BSColor.Primary" Target="note-modal">ノート</BSButton>
 
-@code {
-    private void Note() {
-        // ノートダイアログを表示する。
-    }
-}
+<NoteDialog />
+
