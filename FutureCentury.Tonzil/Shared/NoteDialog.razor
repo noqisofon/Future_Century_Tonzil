@@ -1,10 +1,42 @@
-﻿<BSModal DataId="note-modal">
-  <Header>あなたのお気持ちを聞かせてください</Header>
-  <Content>
-    <BSInput InputType="InputType.TextArea" Value="@("")"></BSInput>
-  </Content>
-  <Footer>
-    <BSButton Color="BSColor.Secondary">やめとく</BSButton>
-    <BSButton Color="BSColor.Primary">投稿</BSButton>
-  </Footer>
+﻿@using Misskey.Domain
+
+<BSToaster />
+@inject IBlazorStrap blazorStrap
+
+<BSModal DataId="note-modal" OnShow="@(() => AssignNote( new Note() ))" HideOnValidSubmit="true" IsStaticBackdrop="true">
+  <BSForm Model="model" OnValidSubmit="@Update">
+    <DataAnnotationsValidator />
+    <BSModalHeader>あなたのお気持ちを聞かせてください</BSModalHeader>
+    <BSModalContent>
+      <BSInput InputType="InputType.TextArea" @bind-value="model.Text"></BSInput>
+    </BSModalContent>
+    <BSModalFooter Context="modal">
+      <BSButton MarginStart="Margins.Auto" Color="BSColor.Secondary" Target="note-modal">やめとく</BSButton>
+      <BSButton Color="BSColor.Primary" IsSubmit="true">投稿</BSButton>
+    </BSModalFooter>
+  </BSForm>
 </BSModal>
+
+@code {
+    /// <summary>
+    /// 現在のビューの影、いわゆるモデル
+    /// </summary>
+    private Note model = new ();
+
+    /// <summary>
+    /// 新しいモデルを設定します。
+    /// </summary>
+    /// <param name="aNote"></param>
+    /// <returns></returns>
+    private async Task AssignNote(Note aNote) {
+        await Task.Run( () => model = aNote );
+    }
+
+    /// <summary>
+    /// 投稿します。
+    /// </summary>
+    /// <returns></returns>
+    private async Task Update() {
+        await Task.Run( () => blazorStrap.Toaster.Add( "Fake note added!", options => options.CloseAfter = 5000 ) );
+    }
+}
