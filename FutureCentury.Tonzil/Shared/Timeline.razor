@@ -6,7 +6,10 @@
     <p>Loading ...</p>
 } else {
     @foreach ( var note in notes ) {
-        <NoteCard Note="@note" />
+        @* プリミティブ型ではないオブジェクトをこうやって渡すことはできるのだろうか？
+         * さっき、唐突にわかった。() を付けなさいということだ。 
+         * が、表示されるのにあぼーんする。 *@
+        <NoteCard Model="@(note)" />
     }
 }
 
