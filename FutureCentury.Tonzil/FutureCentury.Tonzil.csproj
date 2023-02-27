@@ -51,6 +51,7 @@
     </ItemGroup>
 
     <ItemGroup>
+        <ProjectReference Include="..\FutureCentury.Tonzil.Components\FutureCentury.Tonzil.Components.csproj" />
         <ProjectReference Include="..\Misskey\Misskey.csproj" />
     </ItemGroup>
 
