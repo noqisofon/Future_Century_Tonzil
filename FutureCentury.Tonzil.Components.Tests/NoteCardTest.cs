@@ -1,6 +1,4 @@
-﻿using FutureCentury.Tonzil.Components.Shared;
-
-namespace FutureCentury.Tonzil.Components.Tests;
+﻿namespace FutureCentury.Tonzil.Components.Tests;
 
 public class NoteCardTest : BunitTestContext {
 
