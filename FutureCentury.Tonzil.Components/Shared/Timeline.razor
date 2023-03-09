@@ -1,14 +1,12 @@
 ﻿@using Misskey.Domain
+@using Misskey.Services
 @using FutureCentury.Tonzil.Components.Services
-@inject NotesService NotesService
+@inject INotesService NotesService
 
 @if ( notes == null ) {
     <p>Loading ...</p>
 } else {
     @foreach ( var note in notes ) {
-        @* プリミティブ型ではないオブジェクトをこうやって渡すことはできるのだろうか？
-         * さっき、唐突にわかった。() を付けなさいということだ。 
-         * が、表示されるのにあぼーんする。 *@
         <NoteCard Model="@(note)" />
     }
 }

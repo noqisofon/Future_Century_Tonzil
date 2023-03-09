@@ -1,6 +1,8 @@
 ﻿using FutureCentury.Tonzil.Components.Services;
 using FutureCentury.Tonzil.Data;
 
+using Misskey.Services;
+
 namespace FutureCentury.Tonzil;
 
 public static class MauiProgram {
@@ -18,7 +20,7 @@ public static class MauiProgram {
         builder.Services.AddBlazorWebViewDeveloperTools();
 #endif
 
-        builder.Services.AddSingleton<NotesService>();
+        builder.Services.AddSingleton<INotesService, NotesService>();
         builder.Services.AddSingleton<WeatherForecastService>();
 
         return builder.Build();
