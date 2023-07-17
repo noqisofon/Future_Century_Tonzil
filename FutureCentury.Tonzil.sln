@@ -8,7 +8,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{F56638A0-489
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Misskey", "Misskey", "{98C67350-92DA-41BD-9B98-0ABB84DEBA75}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Misskey", "Misskey\Misskey.csproj", "{1EDB157C-F211-4E52-985C-EE08CC37EF63}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Misskey.Domain", "Misskey\Misskey.Domain.csproj", "{1EDB157C-F211-4E52-985C-EE08CC37EF63}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{6B29DECD-11BB-4E6F-A6C7-BE01E1F41F04}"
 EndProject
@@ -16,11 +16,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Misskey.Tests", "Misskey.Te
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Components", "Components", "{6E861A9D-5414-4896-B08B-DE70D5BA925E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mimistrap", "Mimistrap\Mimistrap.csproj", "{A38797F4-AD8A-4FB2-80B8-114CC8AAA0CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mimistrap", "Mimistrap\Mimistrap.csproj", "{A38797F4-AD8A-4FB2-80B8-114CC8AAA0CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FutureCentury.Tonzil.Components", "FutureCentury.Tonzil.Components\FutureCentury.Tonzil.Components.csproj", "{B296D1F9-BC9D-4AE0-96D2-CEC9137200B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FutureCentury.Tonzil.Components", "FutureCentury.Tonzil.Components\FutureCentury.Tonzil.Components.csproj", "{B296D1F9-BC9D-4AE0-96D2-CEC9137200B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FutureCentury.Tonzil.Components.Tests", "FutureCentury.Tonzil.Components.Tests\FutureCentury.Tonzil.Components.Tests.csproj", "{909F7209-C9B3-4911-94F3-B77690FB47CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FutureCentury.Tonzil.Components.Tests", "FutureCentury.Tonzil.Components.Tests\FutureCentury.Tonzil.Components.Tests.csproj", "{909F7209-C9B3-4911-94F3-B77690FB47CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Misskey.Services", "Misskey.Services\Misskey.Services.csproj", "{2B37E9A4-79D9-41FE-8943-7854158D56CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -54,6 +56,10 @@ Global
 		{909F7209-C9B3-4911-94F3-B77690FB47CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{909F7209-C9B3-4911-94F3-B77690FB47CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{909F7209-C9B3-4911-94F3-B77690FB47CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B37E9A4-79D9-41FE-8943-7854158D56CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B37E9A4-79D9-41FE-8943-7854158D56CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B37E9A4-79D9-41FE-8943-7854158D56CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B37E9A4-79D9-41FE-8943-7854158D56CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,6 +71,7 @@ Global
 		{A38797F4-AD8A-4FB2-80B8-114CC8AAA0CD} = {6E861A9D-5414-4896-B08B-DE70D5BA925E}
 		{B296D1F9-BC9D-4AE0-96D2-CEC9137200B0} = {6E861A9D-5414-4896-B08B-DE70D5BA925E}
 		{909F7209-C9B3-4911-94F3-B77690FB47CC} = {6B29DECD-11BB-4E6F-A6C7-BE01E1F41F04}
+		{2B37E9A4-79D9-41FE-8943-7854158D56CB} = {98C67350-92DA-41BD-9B98-0ABB84DEBA75}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}

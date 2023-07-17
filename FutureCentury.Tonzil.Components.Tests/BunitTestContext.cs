@@ -2,7 +2,7 @@ namespace FutureCentury.Tonzil.Components.Tests;
 
 using FutureCentury.Tonzil.Components.Tests.Services;
 
-using Misskey.Services;
+using Misskey.Interfaces;
 
 using BUnitTestContext = Bunit.TestContext;
 

@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Razor">
 
 	<PropertyGroup>
-		<TargetFramework>net6.0</TargetFramework>
+		<TargetFramework>net7.0</TargetFramework>
 		<Nullable>enable</Nullable>
 		<IsPackable>false</IsPackable>
 	</PropertyGroup>
@@ -31,7 +31,8 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\FutureCentury.Tonzil.Components\FutureCentury.Tonzil.Components.csproj" />
-	  <ProjectReference Include="..\Misskey\Misskey.csproj" />
+	  <ProjectReference Include="..\Misskey.Services\Misskey.Services.csproj" />
+	  <ProjectReference Include="..\Misskey\Misskey.Domain.csproj" />
 	</ItemGroup>
 
 

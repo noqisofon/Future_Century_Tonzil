@@ -1,6 +1,4 @@
-﻿using FutureCentury.Tonzil.Components.Services;
-using FutureCentury.Tonzil.Data;
-
+﻿using Misskey.Interfaces;
 using Misskey.Services;
 
 namespace FutureCentury.Tonzil;
@@ -21,7 +19,6 @@ public static class MauiProgram {
 #endif
 
         builder.Services.AddSingleton<INotesService, NotesService>();
-        builder.Services.AddSingleton<WeatherForecastService>();
 
         return builder.Build();
     }

@@ -1,6 +1,6 @@
 ﻿using Misskey.Domain;
+using Misskey.Interfaces;
 using Misskey.Requests;
-using Misskey.Services;
 
 namespace Misskey.Tests.Services;
 

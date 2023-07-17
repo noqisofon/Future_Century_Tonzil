@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
@@ -16,7 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Misskey\Misskey.csproj" />
+    <ProjectReference Include="..\Misskey.Services\Misskey.Services.csproj" />
+    <ProjectReference Include="..\Misskey\Misskey.Domain.csproj" />
   </ItemGroup>
 
 </Project>

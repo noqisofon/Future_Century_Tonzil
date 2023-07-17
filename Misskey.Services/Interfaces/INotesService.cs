@@ -1,7 +1,7 @@
 ﻿using Misskey.Domain;
 using Misskey.Requests;
 
-namespace Misskey.Services;
+namespace Misskey.Interfaces;
 
 /// <summary>
 /// <c>/notes</c> から始まるエンドポイント用のサービスのインターフェースです。

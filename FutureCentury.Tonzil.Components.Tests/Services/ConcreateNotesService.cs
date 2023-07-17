@@ -1,16 +1,15 @@
-﻿using Misskey.Requests;
-using Misskey.Services;
-
+﻿using Misskey.Interfaces;
+using Misskey.Requests;
 
 namespace FutureCentury.Tonzil.Components.Tests.Services;
 
 /// <summary>
-/// 
+///
 /// </summary>
 internal class ConcreateNotesService : INotesService {
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     /// <param name="request"></param>
     /// <returns></returns>
@@ -19,6 +18,11 @@ internal class ConcreateNotesService : INotesService {
                 new Note {
                     CreatedAt = DateTime.Now,
                     Text = "レターパックでとんじる送れは全部詐欺です",
+                    UserId = "hogepiyo"
+                },
+                new Note {
+                    CreatedAt = DateTime.Now,
+                    Text = "ホットソースで食卓の世界が広がります",
                     UserId = "hogepiyo"
                 }
             } );

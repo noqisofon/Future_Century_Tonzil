@@ -1,4 +1,4 @@
-﻿using Misskey.Services;
+﻿using Misskey.Interfaces;
 
 namespace Misskey.Tests.Services;
 
